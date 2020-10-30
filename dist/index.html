@@ -17,41 +17,129 @@
     integrity='sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc' crossorigin='anonymous'>
   <!--Scroll Reveal-->
   <script src='https://unpkg.com/scrollreveal'></script>
-  <title>R+ Tire & Auto</title>
+
+
+  <title>A+ Tire & Auto Inc.</title>
   <link rel='stylesheet' href='css/style.css'>
 </head>
 
 <body>
   <a id='top'></a>
+  <div class="buffer"></div>
   <!--Scroll to Top button-->
   <!-- <a href='#top' id='myBtn' title='Go to top'><i class='fas fa-chevron-circle-up fa-2x'></i></a> -->
   <header class="header">
-    <div class="logo">
-      <span>R+</span> Tire & Auto
-    </div>
-    <div class="nav">
-      <div class="address">
-        <p>Locate in South Mazieborough, WY</p>
-        <h4>Tel: (777) 777-7777</h4>
+    <div class="container">
+      <div class="logo">
+        <img src="img/A-Plus-Tires-and-Auto-inc-logo-5-400w.png" alt="">
       </div>
-      <ul class="nav-menu">
-        <li class="nav-menu-item"><a href="index.html" class="nav-menu-item-link">Home</a></li>
-        <li class="nav-menu-item">
-
-          <a>Tires</a>
-          <i class="fas fa-caret-down"></i>
-        </li>
-        <li class="nav-menu-item"><a href="services.html" class="nav-menu-item-link">Auto Services</a></li>
-        <li class="nav-menu-item"><a href="contact.html" class="nav-menu-item-link">Contact</a></li>
-      </ul>
+      <div class="nav">
+        <div class="address">
+          <p>Locate in South Mazieborough, WY</p>
+          <h2>(777) 777-7777</h2>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-menu-item current"><a href="index.html" class="nav-menu-item-link">Home</a></li>
+          <li class="nav-menu-item">
+            <a href="tires.html">Tires</a>
+            <i class="fas fa-angle-down"></i>
+            <ul>
+              <li><a href="usedtires.html">Used Tires</a></li>
+            </ul>
+          </li>
+          <li class="nav-menu-item"><a href="services.html" class="nav-menu-item-link">Auto Services</a></li>
+          <li class="nav-menu-item"><a href="contact.html" class="nav-menu-item-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
     </div>
-    <div class="hamburger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-
   </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-top">
+      <p class="hero-top-text">
+        Professional Tire and Auto Services
+      </p>
+    </div>
+    <div class="hero-bottom">
+      Let Us Make Your Driving Experience Smooth and Comfortable
+    </div>
+  </section>
+
+  <!-- Cards -->
+  <section class="cards">
+    <div class="container">
+      <div class="card">
+        <img src="img/tire-114259_1280.jpg" alt="">
+        <h2>Tire Services</h2>
+        <p>If your vehicle needs tire repairs or a new set of tires, get in touch with A Plus Tires & Auto Inc. Choose
+          from our wide range of tire services at unmatched prices.</p>
+        <a class='btn' href="tires.html">Check Out Our Tire Services</a>
+      </div>
+      <div class="card">
+        <img src="img/pexels-cottonbro-4489749.jpg" alt="">
+        <h2>Auto Services</h2>
+        <p>A Plus Tires & Auto Inc provides you with comprehensive auto services. You can count on us for suspension
+          repairs, brake repairs, oil changes,
+          etc.</p>
+        <a class='btn' href="services.html">Explore Our Auto Services</a>
+      </div>
+      <div class="card">
+        <img src="img/robert-laursoo-ebNa1XKQX_8-unsplash.jpg" alt="">
+        <h2>The Best Dealers</h2>
+        <p>Rely on our on-site mechanics for all of your auto repair needs. We're the best dealers for top tire brands
+          in town. Call and get a <strong>FREE estimate</strong> from us today!</p>
+        <a class='btn' href="contact.html">Visit Us for Same-Day Services</a>
+      </div>
+    </div>
+  </section>
+  <!-- Video -->
+  <section class="video">
+    <video width="640" controls preload="auto">
+      <source src="img/a-plus-tires-and-autos-jknjr8zzw-7272234967.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="social-media">
+        <i class='fab fa-facebook-f'></i>
+        <i class='fab fa-twitter'></i>
+        <i class='fas fa-envelope'></i>
+      </div>
+      <div class="phone-number">
+        (777) 777-7777
+      </div>
+    </div>
+    <div class="footer-middle">
+      <div class="aboutus">
+        <h2>About Us</h2>
+        <p>A Plus Tires & Auto Inc is a family-owned auto shop located in Clearwater, FL. With over 20 years of
+          experience, we can provide you with exemplary tire and auto services.
+          <br>
+          <br>
+          Our mechanics will ensure that your vehicle runs smoothly. We're fluent in Vietnamese and Cambodian.
+          <br>
+          <br>
+          Give us a call to get FREE estimates on our auto and tire services. We return most calls on the same day.</p>
+      </div>
+      <div class="findus">
+        <h2>Find Us</h2>
+        <iframe
+          src='https://api.mapbox.com/styles/v1/mapbox/streets-v11.html?title=false&zoomwheel=false&access_token=pk.eyJ1Ijoicm95Y2VuZ3V5ZW4iLCJhIjoiY2tnd25oNGdmMGJ0aDJycXh5bGo2NGR2NiJ9.xHroYdK1WhJEgx1wS2yplQ#16.55/27.9337/-82.796' />
+        <a class='btn' href="contact.html">Get Directions</a>
+      </div>
+
+      <div class="contactus"></div>
+    </div>
+  </footer>
   <!-- JavaScript -->
   <script src='js/main.js'></script>
 </body>

@@ -8,7 +8,8 @@
 
 body {
   font-family: $main-font;
-  color: #fff;
+  color: #000;
+  background: #fff;
 }
 
 /* Global */
@@ -18,7 +19,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: #000;
 }
 
 img {
@@ -27,66 +28,236 @@ img {
 
 // Header
 .header {
-  @include flexBox($justify: space-between, $text: left);
   position: fixed;
   top: 0;
   width: 100%;
-  background: $primary-color;
-  padding: 1rem 5rem;
-  border-bottom: 10px $secondary-color double;
+  height: $header-height;
+  background: #fff;
 
-  .logo {
-    font-size: $text-xl;
-    font-family: $heading-font;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-
-    span {
-      color: $secondary-color;
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    bottom: 1px;
+    background: colors(secondary);
+    z-index: -1;
   }
 
-  .nav {
-    @include flexBox($direction: column, $justify: space-between);
+  .container {
+    height: 100%;
+    @include flexBox($justify: space-between);
 
-    &-menu {
-      @include flexBox;
-      margin: 1rem 0;
+    .logo {
+      width: 40%;
+    }
 
-      &-item {
-        margin: 0 1rem;
-        text-transform: uppercase;
-        font-weight: 500;
-        letter-spacing: 1px;
-        cursor: pointer;
+    .nav {
+      height: 100%;
+      padding: 0.5rem 0;
+      @include flexBox(
+        $direction: column,
+        $justify: flex-start,
+        $align: flex-end
+      );
 
-        a {
-          color: $secondary-color;
+      .address {
+        @include flexBox($align: flex-end);
+        color: colors(secondary);
+
+        p {
+          margin: 0 0.5rem;
+          font-size: 0.8rem;
+        }
+
+        h2 {
+          font-size: 1.3rem;
+        }
+      }
+
+      &-menu {
+        @include flexBox;
+        padding: 2.2rem 0;
+
+        &-item {
+          margin-left: 2rem;
           position: relative;
-          padding: 0.3rem 0;
 
           &::before {
             content: "";
             position: absolute;
-            background: #fff;
             height: 2px;
             width: 100%;
-            bottom: 0;
-            left: 0;
+            bottom: -9px;
+            background: colors(secondary);
             transform: scaleX(0);
             transform-origin: left;
-            @include transition;
+            @include transition(0.3s);
           }
 
           &:hover::before {
             transform: scaleX(1);
           }
+
+          & > a {
+            color: colors(light-gray);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+          }
+
+          i {
+            color: colors(light-gray);
+            @include transition;
+          }
+
+          &:nth-child(2) {
+            position: relative;
+
+            i {
+              margin-left: 0.5rem;
+            }
+
+            ul {
+              position: absolute;
+              width: 120px;
+              left: 0;
+              top: 150%;
+              background: lighten(colors(light-gray), 55%);
+              opacity: 0;
+              transform: translateY(-30%);
+              @include transition;
+
+              li {
+                padding: 1rem 0.5rem;
+              }
+              a {
+                color: lighten(colors(light-gray), 20%);
+              }
+            }
+
+            &:hover {
+              ul {
+                opacity: 1;
+                transform: translateY(0);
+              }
+
+              i {
+                transform: rotate(180deg);
+              }
+            }
+          }
         }
       }
     }
+
+    .hamburger {
+      display: none;
+    }
+  }
+}
+
+// Hero
+.hero {
+  .hero-top {
+    background: url("https://le-cdn.websites.hibu.com/a5b09f9c1e8942c2977b99026bc4e0ef/dms3rep/multi/opt/row-of-tires-in-building-2880w.jpg")
+      no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    min-height: 400px;
+    height: 430px;
+    position: relative;
+    @include flexBox;
+    z-index: -1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(22, 60, 110, 0.5);
+    }
+
+    &-text {
+      font-size: $text-xl;
+      font-weight: 500;
+      color: colors(accent);
+      z-index: 0;
+      letter-spacing: 1px;
+    }
   }
 
-  .hamburger {
-    display: none;
+  .hero-bottom {
+    background: colors(primary);
+    color: #fff;
+    @include flexBox;
+    padding: 3rem;
+    font-size: $text-sm;
+    font-weight: 300;
+    letter-spacing: 0.8px;
+  }
+}
+
+.cards {
+  .container {
+    padding: 5rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+
+    .card {
+      // margin: 0 1rem;
+      display: grid;
+      grid-template-rows: 3fr 0.5fr 2fr 1fr;
+      box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.1);
+
+      h2 {
+        font-weight: 300;
+        color: colors(secondary);
+        font-size: $text-sm;
+        margin: 1rem 0;
+        padding: 0 1rem;
+      }
+
+      p {
+        color: colors(light-gray);
+        line-height: 1.7;
+        font-weight: 300;
+        padding: 0 1rem;
+
+        strong {
+          color: #000;
+        }
+      }
+
+      .btn {
+        margin-top: 1rem;
+        text-align: center;
+        align-self: center;
+      }
+    }
+  }
+}
+
+// Video
+.video {
+  width: 100%;
+  video {
+    display: block;
+    margin: 0 auto;
+    border-radius: 1rem;
+    outline: none;
+    box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Footer
+.footer {
+  iframe {
+    width: 400px;
+    height: 200px;
+    outline: none;
+    border: none;
   }
 }
