@@ -1,0 +1,27 @@
+$main-font: "Roboto", sans-serif;
+$heading-font: "Satisfy", cursive;
+$bg-color: #fff;
+$primary-color: #4e3bfa;
+$secondary-color: #ffd561;
+$text-xl: 3rem;
+$text-lg: 2.5rem;
+$text-md: 2rem;
+$text-sm: 1.5rem;
+$text-xs: 1.2rem;
+
+@mixin flexBox(
+  $direction: row,
+  $justify: center,
+  $align: center,
+  $text: center
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  text-align: $text;
+}
+
+@mixin transition($time: 0.5s) {
+  transition: all $time ease;
+}
