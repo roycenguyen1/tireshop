@@ -1,11 +1,11 @@
-$main-font: "Roboto", sans-serif;
+$main-font: "Open Sans", sans-serif;
 $heading-font: "Satisfy", cursive;
 $bg-color: #fff;
 $text-xl: 3rem;
 $text-lg: 2.5rem;
 $text-md: 2rem;
 $text-sm: 1.6rem;
-$text-xs: 1.2rem;
+$text-xs: 1.3rem;
 $header-height: 110px;
 
 $color: (
@@ -17,6 +17,11 @@ $color: (
 
 @function colors($color-name) {
   @return map-get($color, $color-name);
+}
+
+@mixin borderSize($w: 100%, $h: 3px) {
+  width: $w;
+  height: $h;
 }
 
 @mixin flexBox(
@@ -65,4 +70,26 @@ $color: (
   font-size: 1.15rem;
   padding: 0.6rem 0.1rem;
   font-weight: 300;
+}
+
+// Media
+@mixin mediaSm {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+@mixin mediaMd {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
+@mixin mediaLg {
+  @media screen and (min-width: 801px) and (max-width: 1170px) {
+    @content;
+  }
+}
+@mixin mediaXl {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
 }

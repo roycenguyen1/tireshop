@@ -10,6 +10,7 @@ body {
   font-family: $main-font;
   color: #000;
   background: #fff;
+  overflow-x: hidden;
 }
 
 /* Global */
@@ -37,8 +38,7 @@ img {
   &::after {
     content: "";
     position: absolute;
-    height: 3px;
-    width: 100%;
+    @include borderSize;
     bottom: 1px;
     background: colors(secondary);
     z-index: -1;
@@ -71,13 +71,13 @@ img {
         }
 
         h2 {
-          font-size: 1.3rem;
+          font-size: $text-xs;
         }
       }
 
       &-menu {
         @include flexBox;
-        padding: 2.2rem 0;
+        padding: 1.7rem 0;
 
         &-item {
           margin-left: 2rem;
@@ -86,9 +86,8 @@ img {
           &::before {
             content: "";
             position: absolute;
-            height: 2px;
-            width: 100%;
-            bottom: -9px;
+            @include borderSize($h: 2px);
+            bottom: -8px;
             background: colors(secondary);
             transform: scaleX(0);
             transform-origin: left;
@@ -167,6 +166,8 @@ img {
 
 // Hero
 .hero {
+  width: 100%;
+
   .hero-top {
     background: url("https://le-cdn.websites.hibu.com/a5b09f9c1e8942c2977b99026bc4e0ef/dms3rep/multi/opt/row-of-tires-in-building-2880w.jpg")
       no-repeat center center;
@@ -190,7 +191,7 @@ img {
 
     &-text {
       font-size: $text-xl;
-      font-weight: 500;
+      font-weight: 600;
       color: colors(accent);
       z-index: 0;
       letter-spacing: 1px;
@@ -204,7 +205,7 @@ img {
     padding: 3rem;
     font-size: $text-sm;
     font-weight: 300;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.3px;
   }
 }
 
@@ -216,13 +217,11 @@ img {
     grid-gap: 3rem;
 
     .card {
-      // margin: 0 1rem;
-      display: grid;
-      grid-template-rows: 3fr 0.5fr 2fr 1fr;
       box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.1);
+      @include flexBox(column, flex-start, flex-start, left);
 
       h2 {
-        font-weight: 300;
+        font-weight: 400;
         color: colors(secondary);
         font-size: $text-sm;
         margin: 1rem 0;
@@ -234,16 +233,17 @@ img {
         line-height: 1.7;
         font-weight: 300;
         padding: 0 1rem;
+        flex-grow: 1;
 
         strong {
-          color: #000;
+          color: darken(colors(light-gray), 5%);
         }
       }
 
       .btn {
         margin-top: 1rem;
         text-align: center;
-        align-self: center;
+        width: 100%;
       }
     }
   }
@@ -345,3 +345,6 @@ img {
     margin-top: 3rem;
   }
 }
+
+// Mobile
+@import "mobile";
