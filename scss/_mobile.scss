@@ -178,10 +178,11 @@
 
         & > div {
           .mapouter {
-            width: 280px;
+            width: 300px;
+            margin: 0 auto;
 
             .gmap_canvas {
-              width: 280px;
+              width: 300px;
             }
           }
         }
