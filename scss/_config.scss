@@ -58,7 +58,8 @@ a[href^="tel"] {
 }
 
 .current {
-  a {
+  a,
+  i {
     color: colors(secondary) !important;
   }
 
@@ -68,6 +69,7 @@ a[href^="tel"] {
 }
 
 .btn {
+  display: inline-block;
   background: colors(accent);
   border: 2px solid colors(primary);
   border-radius: 5px;

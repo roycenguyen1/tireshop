@@ -128,7 +128,36 @@
       }
     }
   }
+
+  main {
+    .content {
+      .container {
+        flex-direction: column;
+
+        & > div {
+          margin: auto;
+
+          &:nth-child(2) {
+            margin-top: 2rem;
+          }
+
+          .video {
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+
+  main#contact {
+    .boxes {
+      .container {
+        width: 90%;
+      }
+    }
+  }
 }
+
 // Smartphone
 @include mediaSm {
   .container {
@@ -192,6 +221,23 @@
             .gmap_canvas {
               width: 300px;
             }
+          }
+        }
+      }
+    }
+  }
+
+  main#contact {
+    .boxes {
+      .container {
+        width: 90%;
+        flex-direction: column;
+
+        .box {
+          margin: 1rem 0;
+
+          .btn {
+            padding: 0.6rem;
           }
         }
       }

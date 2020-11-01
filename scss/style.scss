@@ -8,7 +8,7 @@
 
 body {
   font-family: $main-font;
-  color: #000;
+  color: colors(light-gray);
   background: #fff;
   overflow-x: hidden;
 }
@@ -169,8 +169,8 @@ img {
   width: 100%;
 
   .hero-top {
-    background: url("https://le-cdn.websites.hibu.com/a5b09f9c1e8942c2977b99026bc4e0ef/dms3rep/multi/opt/row-of-tires-in-building-2880w.jpg")
-      no-repeat center center;
+    // background: url("https://le-cdn.websites.hibu.com/a5b09f9c1e8942c2977b99026bc4e0ef/dms3rep/multi/opt/row-of-tires-in-building-2880w.jpg")
+    //   no-repeat center center;
     background-size: cover;
     width: 100%;
     min-height: 400px;
@@ -258,6 +258,144 @@ img {
     border-radius: 1rem;
     outline: none;
     box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+// Home
+main#home {
+  .hero {
+    .hero-top {
+      background: url("https://le-cdn.websites.hibu.com/a5b09f9c1e8942c2977b99026bc4e0ef/dms3rep/multi/opt/row-of-tires-in-building-2880w.jpg")
+        no-repeat center center;
+    }
+  }
+}
+// Pages
+main {
+  .hero {
+    .hero-top {
+      background: url("../img/robert-laursoo-WHPOFFzY9gU-unsplash.jpg")
+        no-repeat center center;
+      background-size: cover;
+      width: 100%;
+      height: 300px;
+      min-height: 300px;
+    }
+  }
+
+  .content {
+    padding: 2rem 0;
+
+    .container {
+      @include flexBox($text: left, $align: flex-start);
+
+      a {
+        text-decoration: underline;
+      }
+
+      .col-1 {
+        padding: 0 2rem;
+
+        h2 {
+          font-size: $text-sm;
+          font-weight: 400;
+          color: colors(secondary);
+          margin: 2rem 0 1rem 0;
+        }
+
+        ul {
+          list-style: disc;
+          margin-left: 3rem;
+        }
+
+        p {
+          margin: 1rem 0 2rem 0;
+        }
+      }
+
+      .col-2 {
+        text-align: center;
+
+        & > div {
+          margin: 1.5rem 0;
+        }
+
+        & > div:nth-child(1) {
+          background: colors(accent);
+          color: colors(secondary);
+          font-size: $text-sm;
+          padding: 2rem 1rem;
+          font-weight: 500;
+        }
+
+        & > div:nth-child(2) {
+          padding: 1.3rem 0.7rem;
+          border: 1.5px solid colors(primary);
+        }
+
+        .video {
+          width: 300px;
+          video {
+            width: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Services Page
+main#services {
+  .hero {
+    .hero-top {
+      background: url(../img/car-repair-362150_1280.jpg) center -200px;
+    }
+  }
+}
+
+// Contact Page
+main#contact {
+  .hero {
+    .hero-top {
+      background: colors(secondary);
+      height: 400px;
+      min-height: 400px;
+
+      iframe {
+        width: 100%;
+      }
+
+      &::before {
+        background: none;
+      }
+    }
+
+    .hero-bottom {
+      padding: 2rem;
+    }
+  }
+
+  .boxes {
+    padding: 3rem 0;
+
+    .container {
+      @include flexBox(row, flex-start, flex-start, left);
+      .box {
+        flex: 1;
+
+        h2 {
+          color: colors(secondary);
+        }
+
+        .btn {
+          width: 100%;
+          text-align: center;
+        }
+
+        & > div:last-child {
+          margin-top: 1rem;
+        }
+      }
+    }
   }
 }
 
