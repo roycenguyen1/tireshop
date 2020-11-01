@@ -34,6 +34,7 @@ img {
   width: 100%;
   height: $header-height;
   background: #fff;
+  z-index: 100;
 
   &::after {
     content: "";
@@ -169,8 +170,6 @@ img {
   width: 100%;
 
   .hero-top {
-    // background: url("https://le-cdn.websites.hibu.com/a5b09f9c1e8942c2977b99026bc4e0ef/dms3rep/multi/opt/row-of-tires-in-building-2880w.jpg")
-    //   no-repeat center center;
     background-size: cover;
     width: 100%;
     min-height: 400px;
@@ -258,6 +257,10 @@ img {
     border-radius: 1rem;
     outline: none;
     box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.1);
+
+    &[controls] {
+      z-index: -100;
+    }
   }
 }
 // Home
