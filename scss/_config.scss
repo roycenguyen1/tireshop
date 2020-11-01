@@ -52,6 +52,11 @@ $color: (
   margin: auto auto;
 }
 
+a[href^="tel"] {
+  text-decoration: inherit;
+  color: inherit;
+}
+
 .current {
   a {
     color: colors(secondary) !important;

@@ -294,6 +294,7 @@ img {
 
   .footer-middle {
     .container {
+      width: 90%;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       line-height: 1.7;
@@ -314,15 +315,16 @@ img {
 
       .mapouter {
         height: 260px;
-        width: 310px;
+        width: 320px;
         z-index: -100;
+        margin: auto;
       }
 
       .gmap_canvas {
         overflow: hidden;
         background: none !important;
         height: 260px;
-        width: 310px;
+        width: 320px;
       }
 
       .btn {
