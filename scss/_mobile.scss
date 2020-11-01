@@ -12,12 +12,11 @@
   .header {
     .container {
       .nav {
-        display: fixed;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: -120%;
         width: 50vw;
-        height: 100vh;
+        height: 100%;
         background: rgba(colors(primary), 0.9);
         align-items: center;
         @include transition;
@@ -156,6 +155,7 @@
 
     .hero-bottom {
       font-size: 1.1rem;
+      padding: 3rem 0.5rem;
     }
   }
 
@@ -172,6 +172,14 @@
   }
 
   .footer {
+    .footer-top {
+      .container {
+        flex-direction: column;
+        .phone-number {
+          margin-top: 1rem;
+        }
+      }
+    }
     .footer-middle {
       .container {
         grid-template-columns: 1fr;
